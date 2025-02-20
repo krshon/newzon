@@ -160,12 +160,14 @@ header {
 #menu li:last-child a {
   background-color: #ff9800;
   color: white;
-  padding: 8px 20px;
-  border-radius: 25px;
+  padding: 5px 12px;  /* Reduced padding */
+  border-radius: 15px;
+  font-size: 14px;  /* Smaller font size */
   font-weight: bold;
+  white-space: nowrap;  /* Prevents text wrapping */
   transition: background-color 0.3s ease;
-  white-space: nowrap;  /* Prevents text from wrapping */
 }
+
 
 #menu li:last-child a:hover {
   background-color: #f57c00;
@@ -285,4 +287,42 @@ header {
     justify-content: space-between;
     font-size: 12px;
     color: gray;
+}
+/* Bias Breakdown Styling */
+.bias-bar-container {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 10px;
+}
+
+.bias-bar {
+  padding: 5px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.bias-left {
+  background-color: blue;
+}
+
+.bias-center {
+  background-color: gray;
+}
+
+.bias-right {
+  background-color: red;
+}
+
+/* Bias Breakdown Section */
+.bias-breakdown {
+  display: none; /* Initially hidden */
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
 }
