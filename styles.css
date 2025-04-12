@@ -383,3 +383,63 @@ header {
   color: #b0b0b0;
   margin: 0;
 }
+.truth-verification {
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.truth-verification:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.truth-true {
+  background-color: rgba(0, 200, 100, 0.2);
+  color: #00c864;
+  border: 1px solid #00c864;
+}
+
+.truth-false {
+  background-color: rgba(255, 60, 60, 0.2);
+  color: #ff3c3c;
+  border: 1px solid #ff3c3c;
+}
+
+.bias-breakdown {
+  display: flex;
+  height: 24px;
+  margin: 20px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.bias-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.left-bias {
+  background-color: #a6192e; /* dark red */
+}
+
+.center-bias {
+  background-color: #cccccc; /* grey */
+  color: #000;
+}
+
+.right-bias {
+  background-color: #1a3263; /* dark blue */
+}
