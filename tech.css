@@ -1,0 +1,77 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('imgs/tech.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.container {
+  max-width: 900px;
+  margin: 100px auto 20px;
+  background: rgba(0, 0, 0, 0.6); /* slight dark overlay for readability */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+header {
+  display : none;
+}
+
+#logo {
+  max-width: 150px;
+}
+
+.tech-section {
+  text-align: center;
+}
+
+h2 {
+  color: #70e7ff;
+  font-weight: bold;
+}
+
+.news-box {
+  background: rgba(48, 200, 255, 0.15);
+  color: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.news-box:hover {
+  transform: scale(1.03);
+  background: rgba(48, 200, 255, 0.25);
+}
+
+.news-box h3 {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.news-box p {
+  font-size: 16px;
+  color: #e4e6eb;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    width: 95%;
+    margin: 120px auto;
+  }
+}

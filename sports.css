@@ -1,0 +1,208 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  background-color: #121212; /* Darker background */
+  color: #e0e0e0; /* Lighter text color */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6; /* Improved line height */
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #283c4e, #40b080); /* Modern gradient */
+  padding: 1rem 0; /* Increased padding */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Consistent horizontal padding */
+}
+
+#logo {
+  max-height: 50px; /* Maintain aspect ratio, adjust as needed */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav a:hover {
+  color: #66cdaa; /* Highlight on hover */
+}
+
+/* Main Container */
+.container {
+  max-width: 960px; /* Slightly wider */
+  margin: 80px auto 20px; /* Adjusted top margin */
+  padding: 2rem; /* Increased padding */
+  background: rgba(255, 255, 255, 0.05); /* Subtle background */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sports Section */
+.sports-section {
+  text-align: center;
+  margin-bottom: 2rem; /* Space before matches */
+}
+
+h2 {
+  color: #66cdaa; /* Teal heading */
+  font-weight: 600; /* Slightly bolder */
+  margin-bottom: 1rem;
+}
+
+/* Match Box */
+.match-box {
+  background: rgba(255, 255, 255, 0.08); /* Even more subtle background */
+  padding: 1.5rem; /* Increased padding */
+  margin-bottom: 1.5rem; /* Space between matches */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background-color 0.3s ease; /* Hover effect */
+}
+
+.match-box:hover {
+transform: translateY(-3px); /* Move up slightly */
+background-color: rgba(255, 255, 255, 0.12); /* Slightly darker background */
+}
+
+.match-box h3 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.match-box p {
+  font-size: 1rem;
+  color: #a0a0a0;
+  font-weight: 400;
+}
+
+/* Score Section */
+.score-section {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the score */
+  align-items: center; /* Vertically align */
+  margin-top: 1rem;
+}
+
+.score-section span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffd700; /* Gold score */
+  margin: 0 0.5rem; /* Space around score */
+}
+
+/* Live Icon */
+.live-icon {
+  color: #ff4500; /* Orangered */
+  font-weight: 600;
+  margin-left: 0.5rem;
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0; /* Adjust padding */
+  }
+
+  nav ul {
+      flex-direction: column; /* Stack navigation items */
+      margin-top: 1rem;
+  }
+
+  nav li {
+      margin: 0.5rem 0; /* Space between stacked nav items */
+  }
+
+  .container {
+      width: 90%;
+      margin-top: 80px; /* Adjust as needed */
+      padding: 1.5rem;
+  }
+
+  .match-box {
+    padding: 1rem;
+  }
+
+  .score-section {
+      flex-direction: column; /* Stack score elements */
+  }
+  .score-section span {
+    margin: 0.2rem 0;
+  }
+  .live-icon {
+      margin-left: 0; /* Remove left margin */
+      margin-top: 0.2rem; /* Add top margin */
+  }
+}
+
+.score-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  position: relative; /* Needed for absolute positioning of images */
+}
+
+.score-section span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffd700;
+  margin: 0 1rem; /* Increased margin for image space */
+  z-index: 1; /* Ensure score is above images */
+}
+
+.team-image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center */
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  opacity: 0.5; /* Translucent */
+  border-radius: 50%; /* Make them circular */
+  object-fit: cover; /* Prevents image distortion */
+  transition: opacity 0.3s ease; /* Smooth transition on hover */
+}
+
+.team-image:hover {
+  opacity: 0.8; /* More opaque on hover */
+}
+
+.team-image.left {
+  left: 10px; /* Position on the left */
+}
+
+.team-image.right {
+  right: 10px; /* Position on the right */
+}
+
