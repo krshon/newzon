@@ -1,53 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sports - NEWZON</title>
-    <link rel="stylesheet" href="sports.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPL Scorecard - CSK vs GT</title>
+  <link rel="stylesheet" href="sports.css">
 </head>
 <body>
+  <div class="container">
     <header>
-        <a href="index.html"><img src="\imgs\logo.png" alt="NEWZON Logo" id="logo" style="height: 40px;" /></a>
+      <nav class="top-nav">
+        <div class="nav-left">
+          <a href="index.html" class="home-btn">🏠 Home</a>
+        </div>
+        <div class="nav-right">
+          <label for="other-matches">Other Matches:</label>
+          <select id="other-matches" onchange="navigateToMatch()">
+            <option value="">-- Select --</option>
+            <option value="rcb-vs-mi.html">RCB vs MI</option>
+            <option value="kkr-vs-dc.html">KKR vs DC</option>
+            <option value="lsg-vs-rr.html">LSG vs RR</option>
+          </select>
+        </div>
+      </nav>
+      
+      <h1>IPL 2025 Scorecard</h1>
+      <div class="match-info">
+        <div class="teams">
+          <div class="team csk">
+            <img src="csk-logo.png" alt="Chennai Super Kings" class="team-logo">
+            <h2>Chennai Super Kings</h2>
+          </div>
+          <div class="vs">VS</div>
+          <div class="team gt">
+            <img src="gt-logo.png" alt="Gujarat Titans" class="team-logo">
+            <h2>Gujarat Titans</h2>
+          </div>
+        </div>
+        <div class="match-details">
+          <p>Venue: M.A. Chidambaram Stadium, Chennai</p>
+          <p>Date: April 9, 2025</p>
+          <p id="match-status">LIVE</p>
+        </div>
+      </div>
     </header>
 
-    <div class="container">
-        <section class="sports-section">
-            <h2><b>Upcoming Cricket Matches</b></h2>
-            
-            <div class="match-box">
-                <h3><b>NEW ZEALAND  vs PAKISTAN <span class="live-icon">🔴 LIVE</span></b></h3>
-                <p><b>Date:</b> February 19, 2025</p>
-                <p><b>Venue:</b> Eden Park, Auckland</p>
-                <p><b>Live Score:</b> NZ - <b>320/5 (50 OVERS)</b>, PAK - <b>27/2 (6.3 OVERS)</b></p>
-            </div>
-            
-            <div class="match-box">
-                <h3><b>IND vs ENG </b></h3>
-                <p><b>Date:</b> February 20, 2025</p>
-                <p><b>Venue:</b> Lord's, London</p>
-                <p><b>Match starts at:</b> 10:00 AM GMT</p>
-            </div>
-            
-            <div class="match-box">
-                <h3><b> AUS vs SA</b></h3>
-                <p><b>Date:</b> February 21, 2025</p>
-                <p><b>Venue:</b> MCG, Melbourne</p>
-                <p><b>Match starts at:</b> 1:30 PM AEST</p>
-            </div>
+    <main>
+      <div class="score-container">
+        <div class="score-card">
+          <h3>Chennai Super Kings</h3>
+          <div class="current-score">
+            <span id="csk-score">187</span>/<span id="csk-wickets">4</span>
+            <span class="overs">(<span id="csk-overs">20.0</span> Overs)</span>
+          </div>
+          <div class="batsmen">
+            <table>
+              <thead>
+                <tr>
+                  <th>Batsman</th>
+                  <th>Runs</th>
+                  <th>Balls</th>
+                  <th>4s</th>
+                  <th>6s</th>
+                  <th>SR</th>
+                </tr>
+              </thead>
+              <tbody id="csk-batsmen">
+                <!-- Will be populated by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-            <div class="match-box">
-                <h3><b> BAN vs WI</b></h3>
-                <p><b>Date:</b> February 22, 2025</p>
-                <p><b>Venue:</b> Shere Bangla National Stadium, Dhaka</p>
-                <p><b>Match starts at:</b> 3:00 PM BST</p>
-            </div>
-        </section>
-    </div>
+        <div class="score-card">
+          <h3>Gujarat Titans</h3>
+          <div class="current-score">
+            <span id="gt-score">156</span>/<span id="gt-wickets">8</span>
+            <span class="overs">(<span id="gt-overs">18.2</span> Overs)</span>
+          </div>
+          <div class="batsmen">
+            <table>
+              <thead>
+                <tr>
+                  <th>Batsman</th>
+                  <th>Runs</th>
+                  <th>Balls</th>
+                  <th>4s</th>
+                  <th>6s</th>
+                  <th>SR</th>
+                </tr>
+              </thead>
+              <tbody id="gt-batsmen">
+                <!-- Will be populated by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="match-summary">
+        <h3>Match Summary</h3>
+        <div class="commentary" id="commentary">
+          <!-- Will be populated by JavaScript -->
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="controls">
+        <button id="update-score">Refresh Scores</button>
+        <select id="view-selector">
+          <option value="scorecard">Scorecard</option>
+          <option value="commentary">Commentary</option>
+          <option value="stats">Statistics</option>
+        </select>
+      </div>
+      <p>&copy; 2025 IPL Scorecard</p>
+    </footer>
+  </div>
+
+  <script src="sports.js"></script>
 </body>
 </html>
