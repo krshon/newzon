@@ -1,36 +1,27 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #000;
-  color: white;
   margin: 0;
   padding: 0;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background: linear-gradient(90deg, rgba(0, 123, 255, 0.9), rgba(13, 110, 253, 0.9));
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-#logo {
-  max-width: 150px;
+  background: url('imgs/tech.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
 }
 
 .container {
   max-width: 900px;
   margin: 100px auto 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.6); /* slight dark overlay for readability */
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+header {
+  display : none;
+}
+
+#logo {
+  max-width: 150px;
 }
 
 .tech-section {
@@ -43,12 +34,18 @@ h2 {
 }
 
 .news-box {
-  background: rgba(48, 200, 255, 0.2);
+  background: rgba(48, 200, 255, 0.15);
   color: white;
   padding: 15px;
   margin: 15px 0;
   border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.news-box:hover {
+  transform: scale(1.03);
+  background: rgba(48, 200, 255, 0.25);
 }
 
 .news-box h3 {
@@ -62,41 +59,18 @@ h2 {
   font-weight: bold;
 }
 
+a {
+  text-decoration: none;
+}
+
 @media (max-width: 800px) {
   header {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .container {
-      width: 95%;
-      margin: 120px auto;
+    width: 95%;
+    margin: 120px auto;
   }
-}
-
-.bias-bar {
-  height: 8px;
-  border-radius: 4px;
-  margin-top: 5px;
-  position: relative;
-  width: 100%;
-}
-
-.bias-bar[data-bias="left"] {
-  background-color: blue;
-}
-
-.bias-bar[data-bias="right"] {
-  background-color: orange;
-}
-
-.bias-bar[data-bias="neutral"] {
-  background-color: grey;
-}
-
-.truth-percentage {
-  font-size: 12px;
-  font-weight: bold;
-  color: white;
-  margin-top: 3px;
 }
