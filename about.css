@@ -1,4 +1,4 @@
-/* Global Styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,245 +6,257 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #121212;
-    color: white;
+    color: #f0f0f0;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 /* Header Styles */
-header {
+header.modern-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(30, 30, 30, 0.85);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 5px;
-    background: linear-gradient(90deg, rgba(96, 121, 147, 0.8), rgba(13, 110, 253, 0.8));
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    padding: 1rem 2rem;
     z-index: 1000;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-    transition: background 0.3s ease;
+    border-bottom: 1px solid #444;
 }
 
-header:hover {
-    background: linear-gradient(90deg, rgba(0, 123, 255, 1), rgba(13, 110, 253, 1));
-}
-
-/* Logo */
-#logo {
-    max-width: 60px;
-    transition: transform 0.3s ease;
-}
-
-#logo:hover {
-    transform: scale(1.1); /* Logo grow effect on hover */
-}
-
-/* Navigation */
-nav ul {
+.logo-link {
     display: flex;
-    list-style-type: none;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    color: white;
+    align-items: center;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ff9800; /* Hover effect color */
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #ff9800; /* Underline hover effect */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    opacity: 1; /* Show the underline on hover */
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    header {
-        padding: 15px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 15px;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    #logo {
-        max-width: 150px;
-    }
-}
-
-/* About Page Styles */
-.about-banner {
-    background-image: url('imgs/about-banner.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 20px;
     color: white;
-    text-align: center;
-    position: relative;
 }
 
-.about-banner-text {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 30px;
-    border-radius: 10px;
+#logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    background-color: #1e88e5;
+    color: white;
+}
+
+/* Banner Section */
+.about-banner {
+    background: linear-gradient(to right, #1e1e1e, #2a2a2a);
+    padding: 120px 2rem 60px; /* Padding adjusted for fixed header */
+    text-align: center;
 }
 
 .about-banner h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    color: #70e7ff;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #4fc3f7;
 }
 
 .about-banner p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-/* About Content */
-.about-container {
-    max-width: 900px;
-    margin: 5px auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
-
-h2 {
-    color: #ff9800;
-    font-size: 2rem;
-    margin-top: 20px;
-    text-align: center;
-}
-
-p {
     font-size: 1.1rem;
-    color: #e4e6eb;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* Info Box */
+/* Container */
+.about-container {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* About Section */
+.about-section h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    color: #90caf9;
+}
+
+.about-section p {
+    margin: 1rem 0;
+}
+
+/* Info Boxes */
 .info-box {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Truth and Bias Bars */
-.truth-bar, .bias-bar {
+.info-box h3 {
+    color: #ffcc80;
+    margin-bottom: 0.5rem;
+}
+
+/* Truth Bar */
+.truth-bar {
     width: 100%;
+    background-color: #555;
     height: 20px;
     border-radius: 10px;
-    background: #e4e6eb;
     margin: 10px 0;
+    overflow: hidden;
 }
 
 .truth-bar-inner {
     height: 100%;
+    background-color: #66bb6a;
+    transition: width 0.3s ease;
+}
+
+/* Bias Bar */
+.bias-bar {
+    width: 100%;
+    background-color: #444;
+    height: 20px;
     border-radius: 10px;
-    background-color: #70e7ff; /* Truth bar color */
+    margin: 10px 0;
+    overflow: hidden;
 }
 
 .bias-bar-inner {
     height: 100%;
-    border-radius: 10px;
+    background-color: orange;
+    transition: width 0.3s ease;
 }
 
-.bias-bar[data-bias="left"] .bias-bar-inner {
-    background-color: blue; /* Left bias color */
-}
-
-.bias-bar[data-bias="right"] .bias-bar-inner {
-    background-color: orange; /* Right bias color */
-}
-
-.bias-bar[data-bias="neutral"] .bias-bar-inner {
-    background-color: grey; /* Neutral bias color */
-}
-
-/* Join Us Section */
+/* Back Button */
 .join-us {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 
 .join-us button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
+    background-color: #1e88e5;
     border: none;
-    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .join-us button:hover {
-    background-color: #0056b3;
+    background-color: #1565c0;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 10px;
     background-color: #1a1a1a;
-    color: #e4e6eb;
-    margin-top: 40px;
+    padding: 1rem;
+    text-align: center;
+    color: #888;
+    margin-top: 3rem;
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .about-banner h1 {
-        font-size: 2.5rem;
+    .nav-links {
+        flex-direction: column;
+        background-color: #222;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        padding: 1rem;
+        display: none;
     }
 
-    .about-banner p {
-        font-size: 1rem;
+    header.modern-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .about-container {
-        width: 90%;
-        margin: 100px auto;
+    .logo-link {
+        margin-bottom: 0.5rem;
     }
+}
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+.about-banner {
+    background-image: url('imgs/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 160px 2rem 120px;
+    text-align: center;
+    color: white;
+}
 
-    .join-us button {
-        width: 100%;
-        padding: 15px;
-        font-size: 18px;
-    }
+.about-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    z-index: 0;
+}
+
+.about-banner-text {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+}
+.bias-bar {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid #555;
+}
+
+.bias-left {
+    background-color: #2196f3; /* blue */
+    height: 100%;
+}
+
+.bias-neutral {
+    background-color: #888; /* grey */
+    height: 100%;
+}
+
+.bias-right {
+    background-color: orange;
+    height: 100%;
 }
