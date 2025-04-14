@@ -165,7 +165,7 @@ body, html {
 /* Sidebar for similar articles */
 .similar-articles {
   flex: 1;
-  background-color: #e6dede;
+  background-color: #003131;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
@@ -174,16 +174,24 @@ body, html {
 .similar-articles h2 {
   font-size: 1.3rem;
   margin-bottom: 20px;
-  color: #080808;
+  color: #ffffff;
   border-bottom: 1px solid #444;
   padding-bottom: 8px;
 }
 
 .similar-article-card {
   display: flex;
+  color: #ffffff; 
   align-items: center;
   gap: 12px;
   margin-bottom: 15px;
+}
+.similar-article-card a {
+  color: #ffffff; /* Changed from #070202 to white */
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  line-height: 1.4;
 }
 
 .similar-article-card img {
@@ -194,7 +202,7 @@ body, html {
 }
 
 .similar-article-card a {
-  color: #070202;
+  color: #ffffff92;
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s;
@@ -321,4 +329,88 @@ button:hover {
   border-radius: 6px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   font-size: 15px;
+}
+body, html {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* Article box */
+.full-news-article {
+  background: #1c1c1c;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Headings */
+.full-news-article h1 {
+  color: #f0f0f0;
+}
+
+/* Date */
+.article-date {
+  color: #a0a0a0;
+}
+
+/* Text */
+.full-news-article p {
+  color: #d2d2d2;
+}
+
+/* Similar articles box */
+.similar-articles {
+  background-color: #1c1c1c;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.04);
+}
+
+/* Similar heading */
+.similar-articles h2 {
+  color: #eeeeee;
+  border-color: #333;
+}
+
+/* Similar article links */
+.similar-article-card a {
+  color: #cccccc;
+}
+
+.similar-article-card a:hover {
+  color: #4dabf7;
+}
+
+/* Analysis box */
+.analysis-section {
+  background: #242424;
+  color: #e0e0e0;
+}
+
+/* Bars */
+.bias-bar, .truth-bar {
+  background: #2a2a2a;
+}
+
+.bias-fill.left {
+  background: #4b6fff;
+}
+
+.bias-fill.neutral {
+  background: #bbbbbb;
+}
+
+.bias-fill.right {
+  background: #f34f5e;
+}
+
+.truth-fill {
+  background: linear-gradient(90deg, #66bb6a, #43a047);
+  box-shadow: 0 0 10px #43a047;
+}
+
+/* Text labels */
+.bias-percentage, .truth-percentage {
+  color: #dddddd;
+}
+
+/* Verified tag */
+.verified-tag {
+  color: #81c784;
 }
