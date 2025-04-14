@@ -10,32 +10,36 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0d1117;
       color: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     header {
       background-color: #161b22;
       padding: 20px;
+      width: 100%;
       text-align: center;
       border-bottom: 2px solid #70e7ff;
     }
-    .slide img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
 
     header h1 {
       color: #70e7ff;
       margin: 0;
     }
 
+    .content {
+      display: flex;
+      margin-top: 30px;
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     .top-news-slider {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 20px;
+      max-width: 850px;
       background: #1c1c1c;
+      padding: 20px 30px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(112, 231, 255, 0.2);
       position: relative;
@@ -67,28 +71,19 @@
       position: relative;
     }
 
-    .slide h3 {
-      font-size: 20px;
-      color: #ffffff;
-    }
-
-    .slide p {
-      font-size: 16px;
-      color: #ccc;
-    }
-
     .arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 28px;
+      font-size: 26px;
       color: #70e7ff;
       background-color: rgba(255, 255, 255, 0.05);
-      padding: 10px 16px;
+      padding: 6px 12px;
       cursor: pointer;
       border-radius: 50%;
       user-select: none;
       transition: background 0.3s;
+      z-index: 2;
     }
 
     .arrow:hover {
@@ -96,17 +91,51 @@
     }
 
     .left-arrow {
-      left: -30px;
+      left: 10px;
     }
 
     .right-arrow {
-      right: -30px;
+      right: 10px;
+    }
+
+    .hot-topics {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 280px;
+      height: 100%;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    .hot-topics h3 {
+      color: #70e7ff;
+      margin-bottom: 15px;
+    }
+
+    .hot-topics ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .hot-topics li {
+      margin-bottom: 10px;
+    }
+
+    .hot-topics a {
+      text-decoration: none;
+      color: #ccc;
+      transition: color 0.3s;
+    }
+
+    .hot-topics a:hover {
+      color: #70e7ff;
     }
 
     footer {
       text-align: center;
       margin-top: 60px;
       padding: 10px;
+      width: 100%;
       font-size: 14px;
       background-color: #161b22;
       border-top: 1px solid #70e7ff;
@@ -120,38 +149,48 @@
     <h1>NEWZON – Top 5 News</h1>
   </header>
 
-  <section class="top-news-slider">
-    <h2>🔥 Top 5 News</h2>
+  <div class="content">
+    <section class="top-news-slider">
+      <h2>Top News of the Day</h2>
 
-    <div class="slider-container">
-      <span class="arrow left-arrow" onclick="showPrevSlide()">&#x2039;</span>
-      <span class="arrow right-arrow" onclick="showNextSlide()">&#x203A;</span>
+      <div class="slider-container">
+        <span class="arrow left-arrow" onclick="showPrevSlide()">‹</span>
+        <span class="arrow right-arrow" onclick="showNextSlide()">›</span>
 
-      <div class="slide active">
-        <h3>🎬 "The Final Act" Premiere Rocks Hollywood</h3>
-        <p>Emma Stone and Chris Evans dazzle the red carpet at TCL Chinese Theatre. <a href="https://example.com/final-act-premiere" style="color: #70e7ff;">Read more</a></p>
+        <div class="slide active">
+          <h3>🎮 "The Final Act" Premiere Rocks Hollywood</h3>
+          <p>Emma Stone and Chris Evans dazzle the red carpet. <a href="https://example.com/final-act-premiere" style="color: #70e7ff;">Read more</a></p>
+        </div>
+        <div class="slide">
+          <h3>🎤 Taylor Swift’s Eras Tour Lights Up London</h3>
+          <p>Wembley Stadium goes wild for Swift. <a href="https://en.wikipedia.org/wiki/The_Eras_Tour" style="color: #70e7ff;">Read more</a></p>
+        </div>
+        <div class="slide">
+          <h3>📻 Netflix Drops “Shadow Code”</h3>
+          <p>New global sci-fi thriller. <a href="https://www.netflix.com/title/shadow-code" style="color: #70e7ff;">Watch now</a></p>
+        </div>
+        <div class="slide">
+          <h3>🏆 Global Film Awards 2025</h3>
+          <p>Singapore hosts the biggest film night. <a href="https://example.com/global-film-awards-2025" style="color: #70e7ff;">Details</a></p>
+        </div>
+        <div class="slide">
+          <h3>🚀 iPhone 17 Launched</h3>
+          <p>Apple's AI-powered phone debuts. <a href="https://www.apple.com" style="color: #70e7ff;">Explore</a></p>
+        </div>
       </div>
-      
-      <div class="slide">
-        <h3>🎤 Taylor Swift’s Eras Tour Lights Up London</h3>
-        <p>Wembley Stadium goes wild for Swift's 7:00 PM performance. <a href="https://en.wikipedia.org/wiki/The_Eras_Tour" style="color: #70e7ff;">Read more</a></p>
-      </div>
-      
-      <div class="slide">
-        <h3>📺 Netflix Drops “Shadow Code” Series</h3>
-        <p>A global sci-fi thriller event begins at midnight PST! <a href="https://www.netflix.com/title/shadow-code" style="color: #70e7ff;">Watch now</a></p>
-      </div>
-      
-      <div class="slide">
-        <h3>🏆 Global Film Awards 2025 Shine Bright</h3>
-        <p>Stars gather at Marina Bay Sands, Singapore for the big night. <a href="https://example.com/global-film-awards-2025" style="color: #70e7ff;">Event details</a></p>
-      </div>
-      
-      <div class="slide">
-        <h3>🚀 iPhone 17 Unveiled with AI Magic</h3>
-        <p>Apple's new phone features groundbreaking AI and long battery life. <a href="https://www.apple.com" style="color: #70e7ff;">See launch</a></
-        </div>      
-  </section>
+    </section>
+
+    <aside class="hot-topics">
+      <h3>Hot Topics</h3>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/The_Eras_Tour" target="_self">Taylor Swift Tour</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Netflix" target="_self">Netflix</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Apple_Inc." target="_self">Apple Inc.</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Oscars" target="_self">Film Awards</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_self">AI</a></li>
+      </ul>
+    </aside>
+  </div>
 
   <footer>
     &copy; 2025 NEWZON. All rights reserved.
@@ -178,9 +217,10 @@
       showSlide(slideIndex);
     }
 
-    // Optional auto sliding
+    // Optional: autoplay every 5 seconds
     setInterval(showNextSlide, 5000);
   </script>
 
 </body>
 </html>
+
