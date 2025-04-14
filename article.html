@@ -15,10 +15,9 @@
             <article class="full-news-article">
                 <div class="article-image-row">
                     <img src="imgs/a1.jpg" alt="Image 1" class="side-by-side-image">
-                    <img src="imgs/image1.png" alt="Image 2" class="side-by-side-image">
-                  </div>
-                  
-    
+                    <img src="imgs/plane.png" alt="Image 2" class="side-by-side-image">
+                </div>
+
                 <div class="analysis-section">
                     <div class="bias-bar">
                         <div class="bias-fill right" style="width: 28%;"></div>
@@ -26,9 +25,9 @@
                         <div class="bias-fill left" style="width: 9%;"></div>
                     </div>
                     <p class="bias-percentage">
-                        <span class="right-bias">28% Right</span> | 
-                        <span class="neutral-bias">63% Neutral</span> | 
-                        <span class="left-bias">9% Left</span>
+                        <span class="right-bias">28% Right (6 sources)</span> | 
+                        <span class="neutral-bias">63% Neutral (13 sources)</span> | 
+                        <span class="left-bias">9% Left (2 sources)</span>
                     </p>
     
                     <div class="truth-bar">
@@ -36,17 +35,24 @@
                     </div>
                     <p class="truth-percentage">Verification Score: 91% Verified</p>
                 </div>
-                <p class="truth-percentage">Verification Score: 91% Verified</p>
-                <div class="verified-tag">
-                  <i>✔</i> <span>91% Real</span>
-                </div>
-                
+                <div class="verified-tag"></div>
+
                 <h1>Wanted in Murder Case, Two Deportees from U.S. Arrested After Landing in Amritsar</h1>
                 <p class="article-date">Published: February 20, 2025</p>
                 <p>The Punjab Police arrested two individuals, Sandeep Singh alias Sunny and Pradeep Singh, who were deported from the United States. They were wanted in a murder case registered in 2023. Upon their arrival at Sri Guru Ram Dass Jee International Airport in Amritsar, authorities took them into custody for further investigation.</p>
                 <p>Officials confirmed that both individuals had fled to the U.S. shortly after the crime. The Punjab police had been coordinating with American authorities to ensure their deportation and subsequent arrest. Further details about their involvement in the case are expected to emerge as the investigation progresses.</p>
+                <section class="comment-section">
+                    <h2>Leave a Comment</h2>
+                    <div class="comment-form">
+                        <input type="text" id="commenter-name" placeholder="Your Name">
+                        <textarea id="comment-text" rows="3" placeholder="Your Comment"></textarea>
+                        <button onclick="postComment()">Post Comment</button>
+                    </div>
+                    <div id="comments-container"></div>
+                </section>
             </article>
-    
+
+            <!-- Similar articles section -->
             <aside class="similar-articles">
                 <h2>Similar News</h2>
                 <div class="similar-article-card">
@@ -93,8 +99,39 @@
                     <img src="imgs/su.png" alt="Related news image">
                     <a href="article4.html">International Summit on Cybersecurity Tackles Global Threats</a>
                 </div>
-              
             </aside>
         </div>
     </main>
-    
+
+    <script>
+        function postComment() {
+            const name = document.getElementById('commenter-name').value.trim();
+            const text = document.getElementById('comment-text').value.trim();
+
+            if (!name || !text) {
+                alert("Please enter both your name and a comment.");
+                return;
+            }
+
+            const comment = document.createElement('div');
+            comment.className = 'comment-box';
+            comment.innerHTML = `
+                <p><strong>${name}</strong></p>
+                <p>${text}</p>
+                <button class="like-button" onclick="likeComment(this)">❤️ <span>0</span></button>
+            `;
+
+            const container = document.getElementById('comments-container');
+            container.prepend(comment);
+
+            document.getElementById('commenter-name').value = '';
+            document.getElementById('comment-text').value = '';
+        }
+
+        function likeComment(button) {
+            const span = button.querySelector('span');
+            span.textContent = parseInt(span.textContent) + 1;
+        }
+    </script>
+</body>
+</html>
