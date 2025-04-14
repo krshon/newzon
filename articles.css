@@ -111,11 +111,11 @@ body, html {
 }
 
 .right-bias {
-  color: #5e0217;
+  color: #de1947;
 }
 
 .left-bias {
-  color: #2506d6;
+  color: #573aff;
 }
 
 /* ✅ Verified tag style */
@@ -165,7 +165,7 @@ body, html {
 /* Sidebar for similar articles */
 .similar-articles {
   flex: 1;
-  background-color: #e6dede;
+  background-color: #15095786;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
@@ -174,7 +174,7 @@ body, html {
 .similar-articles h2 {
   font-size: 1.3rem;
   margin-bottom: 20px;
-  color: #080808;
+  color: #f0eaea;
   border-bottom: 1px solid #444;
   padding-bottom: 8px;
 }
@@ -226,4 +226,148 @@ body, html {
   .side-by-side-image {
     width: 100%;
   }
+}
+.similar-article-card a {
+  color: #ffffff92;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  line-height: 1.4;
+}
+body, html {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* Article box */
+.full-news-article {
+  background: #1c1c1c;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Headings */
+.full-news-article h1 {
+  color: #f0f0f0;
+}
+
+/* Date */
+.article-date {
+  color: #a0a0a0;
+}
+
+/* Text */
+.full-news-article p {
+  color: #d2d2d2;
+}
+
+/* Similar articles box */
+.similar-articles {
+  background-color: #1c1c1c;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.04);
+}
+
+/* Similar heading */
+.similar-articles h2 {
+  color: #eeeeee;
+  border-color: #333;
+}
+
+/* Similar article links */
+.similar-article-card a {
+  color: #cccccc;
+}
+
+.similar-article-card a:hover {
+  color: #4dabf7;
+}
+
+/* Analysis box */
+.analysis-section {
+  background: #242424;
+  color: #e0e0e0;
+}
+
+/* Bars */
+.bias-bar, .truth-bar {
+  background: #2a2a2a;
+}
+
+.bias-fill.left {
+  background: #4b6fff;
+}
+
+.bias-fill.neutral {
+  background: #bbbbbb;
+}
+
+.bias-fill.right {
+  background: #f34f5e;
+}
+
+.truth-fill {
+  background: linear-gradient(90deg, #66bb6a, #43a047);
+  box-shadow: 0 0 10px #43a047;
+}
+
+/* Text labels */
+.bias-percentage, .truth-percentage {
+  color: #dddddd;
+}
+
+/* Verified tag */
+.verified-tag {
+  color: #81c784;
+}
+.comment-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #111;
+  border-radius: 12px;
+  color: #fff;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-form input,
+.comment-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #222;
+  color: #fff;
+  resize: vertical;
+}
+
+.comment-form button {
+  background-color: #00bcd4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.comment-form button:hover {
+  background-color: #0097a7;
+}
+
+.comment-box {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  color: #ff5252;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 5px;
 }
