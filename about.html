@@ -1,67 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>About Us - NEWZON</title>
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="about.css" />
 </head>
 <body>
-    <header>
-        <a href="index.html"><img src="imgs/logo.png" alt="NEWZON Logo" id="logo"></a>
+    <!-- Modern Header -->
+    <header class="modern-header">
+        <a href="index.html" class="logo-link">
+            <img src="imgs/logo.png" alt="NEWZON Logo" id="logo" />
+            <span class="site-title">NEWZON</span>
+        </a>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="tech.html">Tech News</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Spacer to prevent content from hiding under fixed header -->
+    <div style="height: 90px;"></div>
+
+    <!-- Banner Section -->
     <section class="about-banner">
         <div class="about-banner-text">
             <h1>Our Story</h1>
             <p>We believe in a transparent world where news is verified, trustworthy, and free of bias.</p>
-            <p>In today’s fast-paced world, where information is consumed rapidly, distinguishing between truth and misinformation has never been more challenging. We saw a growing trend where people consumed news without knowing whether it was verified or even trustworthy. Our mission began with a simple yet powerful question: <strong>Why should people have to guess if the news they read is real?</strong></p>
-
+            <p>In today’s fast-paced world, where information is consumed rapidly, distinguishing between truth and misinformation has never been more challenging. Our mission began with a simple yet powerful question: <strong>Why should people have to guess if the news they read is real?</strong></p>
         </div>
     </section>
 
+    <!-- Main About Content -->
     <div class="about-container">
         <section class="about-section">
             <h2>Why We Started</h2>
-            <p>In today's fast-paced world, news can be overwhelming. But it often lacks the transparency that we, as users, need. We realized that there was a huge gap in the market—news platforms that show not just the facts, but also their reliability and political bias. That's when NEWZON was born.</p>
+            <p>News can be overwhelming—but it often lacks transparency. We saw the gap: a platform that shows not just facts but also their reliability and political bias. That's when NEWZON was born.</p>
 
             <h2>Our Mission</h2>
-            <p>NEWZON was founded with one goal in mind: to build a platform that provides verified news with complete transparency. We offer fact-checking tools, a bias indicator, and the ability to quickly gauge the reliability of news so that users can trust what they read.</p>
+            <p>Our goal is to deliver verified news with complete transparency. With tools like fact-checking, a bias indicator, and a truth index, readers can trust what they consume.</p>
 
             <h2>How We Work: Truth Index & Political Bias Bar</h2>
+            
+            <!-- Truth Index -->
             <div class="info-box">
                 <h3>Truth Index</h3>
-                <p>The **Truth Index** is a visual representation of how reliable and factual a piece of news is. We calculate this index based on verified sources, fact-checking databases, and algorithms that compare news stories to credible references. The higher the index, the more reliable the news.</p>
+                <p>The <strong>Truth Index</strong> is our unique metric for assessing news reliability. It uses verified sources, fact-checking databases, and AI to detect manipulation. A score closer to 100% means the news is highly reliable.</p>
                 <div class="truth-bar">
                     <div class="truth-bar-inner" style="width: 92%;" title="Truth Score: 92%"></div>
                 </div>
-                <p>Truth Score: 92%</p>
+                <p><strong>Truth Score:</strong> 92% — Verified by trusted sources and minimal opinionated content.</p>
             </div>
 
-            <div class="info-box">
-                <h3>Political Bias</h3>
-                <p>Our **Political Bias Bar** helps you understand the political leanings of the news. Whether it’s left-wing, right-wing, or neutral, we represent it through a simple color-coded bar to give you insights into the bias of the news source.</p>
-                <div class="bias-bar" data-bias="right" title="Right Wing Bias">
-                    <div class="bias-bar-inner" style="width: 70%;"></div>
-                </div>
-                <p>Bias: Right Wing</p>
-            </div>
+            <!-- Political Bias -->
+<!-- Political Bias -->
+<div class="info-box">
+    <h3>Political Bias</h3>
+    <p>
+        The <strong>Political Bias Bar</strong> helps visualize where a source stands politically.
+        It analyzes tone, sources, references, and history. Categories include
+        <span style="color: blue;">Left</span>,
+        <span style="color: orange;">Right</span>, and
+        <span style="color: grey;">Neutral</span>.
+    </p>
+    <div class="bias-bar" title="Bias Breakdown">
+        <div class="bias-left" style="width: 30%;"></div>
+        <div class="bias-neutral" style="width: 20%;"></div>
+        <div class="bias-right" style="width: 50%;"></div>
+    </div>
+    <p><strong>Bias:</strong> 30% Left, 20% Neutral, 50% Right</p>
+</div>
+
 
             <h2>Our Evolution</h2>
-            <p>What started as an idea quickly grew into a platform driven by community feedback and constant improvement. We’ve come a long way, enhancing user experience, integrating innovative tools, and continuously pushing for more transparency in the digital age.</p>
+            <p>NEWZON grew from an idea into a transparent, user-driven news platform. We're constantly improving through feedback and innovation.</p>
 
             <h2>Our Vision</h2>
-            <p>Our vision is simple: To become the most trusted source of news where users feel confident in the information they consume. We aim to lead by example in the battle against misinformation and show people that transparency can go hand in hand with news consumption.</p>
+            <p>We aim to become the most trusted news source globally—combating misinformation and promoting clarity through tech and truth.</p>
 
             <h2>Our Team</h2>
-            <p>Behind NEWZON is a dedicated team of tech enthusiasts, data scientists, and journalists who believe in the power of truth. We’re constantly working to improve the platform and offer users the most reliable news available.</p>
+            <p>We’re a team of techies, journalists, and data nerds, united by our love for truth. We're always working to make NEWZON better for you.</p>
 
             <div class="join-us">
                 <button onclick="window.location.href='index.html'">Back to Home</button>
@@ -69,6 +90,7 @@
         </section>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 NEWZON. All rights reserved.</p>
     </footer>
