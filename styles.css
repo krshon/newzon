@@ -308,7 +308,7 @@ header {
 }
 
 .truth-bar {
-  height: 12px;
+  height: 20px;
   border-radius: 6px;
   margin-top: 8px;
   width: 100%;
@@ -402,7 +402,7 @@ header {
 
 .truth-true {
   background-color: rgba(0, 200, 100, 0.2);
-  color: #00c864;
+  color: #007b3e;
   border: 1px solid #00c864;
 }
 
@@ -442,4 +442,201 @@ header {
 
 .right-bias {
   background-color: #1a3263; /* dark blue */
+}
+.political-bias-bar {
+  display: flex;
+  height: 8px;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.political-left {
+  background-color: blue;
+}
+
+.political-neutral {
+  background-color: gray;
+}
+
+.political-right {
+  background-color: orange;
+}
+
+.truth-circle-container {
+  width: 60px;
+  margin-top: 10px;
+}
+
+.article-content-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article-main {
+  flex: 1;
+}
+
+.article-title-with-score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.truth-score-box {
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: background-color 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.info-boxes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.truth-score-box {
+  padding: 10px 15px; /* Increase padding for a taller box */
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem; /* Adjust font size for better alignment */
+  background-color: #00672ba7; /* default green */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: background-color 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+  height: 20px; /* Increase height for a taller appearance */
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+}
+
+.political-bias-bar {
+  display: flex;
+  height: 30px; /* taller */
+  width: 200px; /* adjust based on your layout */
+  border-radius: 6px;
+  overflow: hidden;
+  margin-left: 10px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.political-left {
+  background-color: #3498db;
+  height: 100%;
+}
+
+.political-neutral {
+  background-color: #bdc3c7;
+  height: 100%;
+}
+
+.political-right {
+  background-color: #e67e22;
+  height: 100%;
+}
+
+.bias-labels {
+  position: absolute;
+  top: -18px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 2px;
+  color: #444;
+}
+
+.bias-labels span {
+  width: 33.33%;
+  text-align: center;
+}
+.news-summary {
+  font-size: 0.875rem; /* Adjusted font size */
+  color: #555; /* A darker color for better readability */
+  margin-top: 0px; /* Reduced space above the summary */
+  margin-bottom: 12px; /* Space below the summary */
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif; /* Modern, high-tech font */
+  font-weight: normal; /* Remove bold */
+}
+
+
+/* Tooltip Styling */
+/* Tooltip Styling */
+[data-tooltip] {
+  position: relative;
+  cursor: pointer; /* Indicate interactivity */
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%; /* Position above the element */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  white-space: nowrap;
+}
+
+/* Show tooltip on hover */
+[data-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Tooltip Arrow */
+[data-tooltip]::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Optional: Styling for the political bias bars */
+
+.political-left, .political-neutral, .political-right {
+  height: 120%;
+}
+
+.political-left {
+  background-color: orange;
+}
+
+.political-neutral {
+  background-color: grey;
+}
+
+.political-right {
+  background-color: blue;
 }
