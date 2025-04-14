@@ -1,226 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Top 5 News - NEWZON</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d1117;
-      color: #f1f1f1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
 
-    header {
-      background-color: #161b22;
-      padding: 20px;
-      width: 100%;
-      text-align: center;
-      border-bottom: 2px solid #70e7ff;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top News - NEWZON</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117;
+            color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow-x: hidden;
+            justify-content: center;
+        }
+
+        header {
+            background-color: #161b22;
+            padding: 30px 50px;
+            width: 100%;
+            text-align: center;
+            border-bottom: 2px solid #70e7ff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            color: #70e7ff;
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .carousel-container {
+            width: 80%;
+            max-width: 1200px;
+            background: #1c1c1c;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(112, 231, 255, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            transition: opacity 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-bottom: 5px solid #70e7ff;
+        }
+
+        .slide .news-content {
+            padding: 30px;
+            text-align: center;
+            color: #f1f1f1;
+        }
+
+        .slide .news-content h2 {
+            font-size: 2rem;
+            color: #70e7ff;
+            margin-bottom: 20px;
+        }
+
+        .slide .news-content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .slide .news-content a {
+            text-decoration: none;
+            color: #70e7ff;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .slide .like-button {
+            background-color: #70e7ff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            color: #0d1117;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .slide .like-button:hover {
+            background-color: #56c9e1;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 26px;
+            color: #70e7ff;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 50%;
+            user-select: none;
+            transition: background 0.3s;
+            z-index: 2;
+        }
+
+        .arrow:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .left-arrow {
+            left: 10px;
+        }
+
+        .right-arrow {
+            right: 10px;
+        }
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1117;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    justify-content: center;
+}
+
+header {
+    background-color: #161b22;
+    padding: 30px 50px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #70e7ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    color: #70e7ff;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.carousel-container {
+    width: 80%;
+    max-width: 1200px;
+    background: #1c1c1c;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(112, 231, 255, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 400px; /* Fixed height to maintain a consistent aspect ratio */
+    object-fit: cover; /* Ensures the image covers the space without distortion */
+    border-bottom: 5px solid #70e7ff;
+}
+
+.slide .news-content {
+    padding: 30px;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+.slide .news-content h2 {
+    font-size: 2rem;
+    color: #70e7ff;
+    margin-bottom: 20px;
+}
+
+.slide .news-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.slide .news-content a {
+    text-decoration: none;
+    color: #70e7ff;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.slide .like-button {
+    background-color: #70e7ff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #0d1117;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slide .like-button:hover {
+    background-color: #56c9e1;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    color: #70e7ff;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    transition: background 0.3s;
+    z-index: 2;
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    background-color: #161b22;
+    border-top: 1px solid #70e7ff;
+    color: #999;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 95%;
     }
 
     header h1 {
-      color: #70e7ff;
-      margin: 0;
+        font-size: 2rem;
     }
 
-    .content {
-      display: flex;
-      margin-top: 30px;
-      gap: 50px;
-      flex-wrap: wrap;
-      justify-content: center;
+    .slide img {
+        height: 300px; /* Adjust height for mobile devices */
     }
+}
 
-    .top-news-slider {
-      max-width: 850px;
-      background: #1c1c1c;
-      padding: 20px 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(112, 231, 255, 0.2);
-      position: relative;
-    }
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 10px;
+            width: 100%;
+            font-size: 14px;
+            background-color: #161b22;
+            border-top: 1px solid #70e7ff;
+            color: #999;
+        }
 
-    .top-news-slider h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #70e7ff;
-      font-size: 28px;
-    }
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .carousel-container {
+                width: 95%;
+            }
 
-    .slider-container {
-      position: relative;
-      overflow: hidden;
-      height: 180px;
-    }
-
-    .slide {
-      position: absolute;
-      width: 100%;
-      opacity: 0;
-      transition: opacity 0.6s ease-in-out;
-      padding: 10px;
-    }
-
-    .slide.active {
-      opacity: 1;
-      position: relative;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 26px;
-      color: #70e7ff;
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 6px 12px;
-      cursor: pointer;
-      border-radius: 50%;
-      user-select: none;
-      transition: background 0.3s;
-      z-index: 2;
-    }
-
-    .arrow:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .left-arrow {
-      left: 10px;
-    }
-
-    .right-arrow {
-      right: 10px;
-    }
-
-    .hot-topics {
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 280px;
-      height: 100%;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-    }
-
-    .hot-topics h3 {
-      color: #70e7ff;
-      margin-bottom: 15px;
-    }
-
-    .hot-topics ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .hot-topics li {
-      margin-bottom: 10px;
-    }
-
-    .hot-topics a {
-      text-decoration: none;
-      color: #ccc;
-      transition: color 0.3s;
-    }
-
-    .hot-topics a:hover {
-      color: #70e7ff;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 60px;
-      padding: 10px;
-      width: 100%;
-      font-size: 14px;
-      background-color: #161b22;
-      border-top: 1px solid #70e7ff;
-      color: #999;
-    }
-  </style>
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>NEWZON – Top 5 News</h1>
-  </header>
+    <header>
+        <h1>NEWZON – Top News</h1>
+    </header>
 
-  <div class="content">
-    <section class="top-news-slider">
-      <h2>Top News of the Day</h2>
+    <div class="carousel-container">
+        <div class="carousel-slides">
+            <div class="slide">
+                <img src="imgs/osc.jpg" alt="Major News Image 1">
+                <div class="news-content">
+                    <h2>🎬 "The Final Act" Premiere Rocks Hollywood</h2>
+                    <p>Emma Stone and Chris Evans dazzle the red carpet in an unforgettable event. The premiere marks the start of a highly anticipated movie season. <a href="https://example.com/final-act-premiere">Read more</a></p>
+                    <button class="like-button">👍 Like</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="imgs/tay.jpg" alt="Major News Image 2">
+                <div class="news-content">
+                    <h2>🎤 Taylor Swift’s Eras Tour Lights Up London</h2>
+                    <p>Wembley Stadium goes wild for Swift's spectacular performance. <a href="https://en.wikipedia.org/wiki/The_Eras_Tour">Read more</a></p>
+                    <button class="like-button">👍 Like</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1200x500/87cefa" alt="Major News Image 3">
+                <div class="news-content">
+                    <h2>📻 Netflix Drops “Shadow Code”</h2>
+                    <p>New global sci-fi thriller takes the world by storm. <a href="https://www.netflix.com/title/shadow-code">Watch now</a></p>
+                    <button class="like-button">👍 Like</button>
+                </div>
+            </div>
+        </div>
 
-      <div class="slider-container">
         <span class="arrow left-arrow" onclick="showPrevSlide()">‹</span>
         <span class="arrow right-arrow" onclick="showNextSlide()">›</span>
+    </div>
 
-        <div class="slide active">
-          <h3>🎮 "The Final Act" Premiere Rocks Hollywood</h3>
-          <p>Emma Stone and Chris Evans dazzle the red carpet. <a href="https://example.com/final-act-premiere" style="color: #70e7ff;">Read more</a></p>
-        </div>
-        <div class="slide">
-          <h3>🎤 Taylor Swift’s Eras Tour Lights Up London</h3>
-          <p>Wembley Stadium goes wild for Swift. <a href="https://en.wikipedia.org/wiki/The_Eras_Tour" style="color: #70e7ff;">Read more</a></p>
-        </div>
-        <div class="slide">
-          <h3>📻 Netflix Drops “Shadow Code”</h3>
-          <p>New global sci-fi thriller. <a href="https://www.netflix.com/title/shadow-code" style="color: #70e7ff;">Watch now</a></p>
-        </div>
-        <div class="slide">
-          <h3>🏆 Global Film Awards 2025</h3>
-          <p>Singapore hosts the biggest film night. <a href="https://example.com/global-film-awards-2025" style="color: #70e7ff;">Details</a></p>
-        </div>
-        <div class="slide">
-          <h3>🚀 iPhone 17 Launched</h3>
-          <p>Apple's AI-powered phone debuts. <a href="https://www.apple.com" style="color: #70e7ff;">Explore</a></p>
-        </div>
-      </div>
-    </section>
+    <footer>
+        &copy; 2025 NEWZON. All rights reserved.
+    </footer>
 
-    <aside class="hot-topics">
-      <h3>Hot Topics</h3>
-      <ul>
-        <li><a href="https://en.wikipedia.org/wiki/The_Eras_Tour" target="_self">Taylor Swift Tour</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Netflix" target="_self">Netflix</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Apple_Inc." target="_self">Apple Inc.</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Oscars" target="_self">Film Awards</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_self">AI</a></li>
-      </ul>
-    </aside>
-  </div>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
-  <footer>
-    &copy; 2025 NEWZON. All rights reserved.
-  </footer>
+        function showSlide(index) {
+            const carousel = document.querySelector('.carousel-slides');
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
 
-  <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) slide.classList.add('active');
-      });
-    }
+        function showPrevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
+        }
 
-    function showNextSlide() {
-      slideIndex = (slideIndex + 1) % slides.length;
-      showSlide(slideIndex);
-    }
-
-    function showPrevSlide() {
-      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-      showSlide(slideIndex);
-    }
-
-    // Optional: autoplay every 5 seconds
-    setInterval(showNextSlide, 5000);
-  </script>
+        // Optional: autoplay every 5 seconds
+        setInterval(showNextSlide, 5000);
+    </script>
 
 </body>
-</html>
 
+</html>
