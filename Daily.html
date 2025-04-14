@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top 5 News - NEWZON</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117;
+      color: #f1f1f1;
+    }
+
+    header {
+      background-color: #161b22;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #70e7ff;
+    }
+    .slide img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+    header h1 {
+      color: #70e7ff;
+      margin: 0;
+    }
+
+    .top-news-slider {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #1c1c1c;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(112, 231, 255, 0.2);
+      position: relative;
+    }
+
+    .top-news-slider h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #70e7ff;
+      font-size: 28px;
+    }
+
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+      height: 180px;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      padding: 10px;
+    }
+
+    .slide.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .slide h3 {
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    .slide p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 28px;
+      color: #70e7ff;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 10px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+      transition: background 0.3s;
+    }
+
+    .arrow:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .left-arrow {
+      left: -30px;
+    }
+
+    .right-arrow {
+      right: -30px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 10px;
+      font-size: 14px;
+      background-color: #161b22;
+      border-top: 1px solid #70e7ff;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>NEWZON – Top 5 News</h1>
+  </header>
+
+  <section class="top-news-slider">
+    <h2>🔥 Top 5 News</h2>
+
+    <div class="slider-container">
+      <span class="arrow left-arrow" onclick="showPrevSlide()">&#x2039;</span>
+      <span class="arrow right-arrow" onclick="showNextSlide()">&#x203A;</span>
+
+      <div class="slide active">
+        <h3>🎬 "The Final Act" Premiere Rocks Hollywood</h3>
+        <p>Emma Stone and Chris Evans dazzle the red carpet at TCL Chinese Theatre. <a href="https://example.com/final-act-premiere" style="color: #70e7ff;">Read more</a></p>
+      </div>
+      
+      <div class="slide">
+        <h3>🎤 Taylor Swift’s Eras Tour Lights Up London</h3>
+        <p>Wembley Stadium goes wild for Swift's 7:00 PM performance. <a href="https://en.wikipedia.org/wiki/The_Eras_Tour" style="color: #70e7ff;">Read more</a></p>
+      </div>
+      
+      <div class="slide">
+        <h3>📺 Netflix Drops “Shadow Code” Series</h3>
+        <p>A global sci-fi thriller event begins at midnight PST! <a href="https://www.netflix.com/title/shadow-code" style="color: #70e7ff;">Watch now</a></p>
+      </div>
+      
+      <div class="slide">
+        <h3>🏆 Global Film Awards 2025 Shine Bright</h3>
+        <p>Stars gather at Marina Bay Sands, Singapore for the big night. <a href="https://example.com/global-film-awards-2025" style="color: #70e7ff;">Event details</a></p>
+      </div>
+      
+      <div class="slide">
+        <h3>🚀 iPhone 17 Unveiled with AI Magic</h3>
+        <p>Apple's new phone features groundbreaking AI and long battery life. <a href="https://www.apple.com" style="color: #70e7ff;">See launch</a></
+        </div>      
+  </section>
+
+  <footer>
+    &copy; 2025 NEWZON. All rights reserved.
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    function showNextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    function showPrevSlide() {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    // Optional auto sliding
+    setInterval(showNextSlide, 5000);
+  </script>
+
+</body>
+</html>
